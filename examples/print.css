@@ -1,0 +1,12 @@
+div.myCanvas, div#nrSeats, div#printInfo {
+	display:block !important;
+}
+
+.myCanvas{
+	display:block !important;
+}
+
+div#touchInfo, div#mouseInfo, div#panel1, div#creatorInfo {
+	display:none !important;
+}
+
