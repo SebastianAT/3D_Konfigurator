@@ -3,12 +3,12 @@
 
 ![Funtrain](https://github.com/SebastianAT/3D_Konfigurator/blob/master/Screenshot2.png)
 
-3D Modelle mit AutoCad erstellt.
+* 3D Modelle mit AutoCad erstellt.
 
-Blender 3D für Animationen etc..
+* Blender 3D für Animationen etc..
 
-Mit HTML, CSS, (bootstrap) Grundgerüst gebaut.
+* Mit HTML, CSS, (bootstrap) Grundgerüst gebaut.
 
-Mit JavaScript - Three.js lib 3D Modelle eingebaut.
+* Mit JavaScript - Three.js lib 3D Modelle eingebaut.
 
 
