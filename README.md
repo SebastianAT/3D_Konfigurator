@@ -11,4 +11,4 @@
 
 * Mit JavaScript - Three.js lib 3D Modelle eingebaut.
 
-
+## 3D Modelle sind Urheberrechtlich geschützt und werden nicht HOCHGELADEN, es bedarf einer ausdrücklichen schriftlichen Zustimmung!
