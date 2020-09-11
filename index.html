@@ -109,7 +109,7 @@
 			var isOpen1 = null, isOpen2 = null, isOpen3 = null, isOpen4 = null, isOpen5 = null;
 			var isOpenTwice1 = null, isOpenTwice2 = null, isOpenTwice3 = null, isOpenTwice4 = null, isOpenTwice5 = null;
 			var isOpenStandardDoors = false, isOpenTwiceDoors = false, isOpenTwiceDoor = false, isOpenStandardDoor = false, isFrance = false;
-			var ground;
+			var ground, billboards_normal = false, billboards_lamps = false;
 			var closed1 = true, closed2 = true, closed3 = true, closed4 = true, closed5 = true;
 			var pvc1 = false, pvc2 = false, pvc3 = false, pvc4 = false, pvc5 = false;
 			var pvcClosed1 = false, pvcClosed2 = false, pvcClosed3 = false, pvcClosed4 = false, pvcClosed5 = false;
@@ -1089,7 +1089,7 @@
 				<h2 style="color:yellow; border:solid 2px; text-align:center;" class="lang" key="LANG15">Extraausstattung</h2>
 				<label style="color:yellow;" class="lang" key="LANG16">Drehlicht</label><input name="in2" type="checkbox" onclick="myFunction(this, '2')" data-name="Drehlicht" key="LANG16" id="drehlicht2" /><br>
 				<label style="color:yellow;" class="lang" key="LANG34">Werbetafel</label><input key="LANG34" name="in2" onclick="setWerbetafel(this, '1')" type="checkbox" data-name="Werbetafel" id="werbetafel1" /><br>
-				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in2" onclick="setWerbetafel(this, '1')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung1" /><br>
+				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in2" onclick="setWerbetafelLamps(this, '1')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung1" /><br>
 				<label style="color:yellow;" class="lang" key="LANG36">Transparentes Dach</label><input key="LANG36" name="in2" onclick="setDachtransparent(this, '1')" type="checkbox" data-name="Transparentes Dach" id="dach_transparent1" /><br>
 				<label style="color:yellow;" class="lang" key="LANG37">Zwei Türen-System</label><input key="LANG37" name="in2" onclick="" type="checkbox" data-name="Zwei-Türen System" id="zweiTueren1" /><br>
 				<label style="color:yellow;" class="lang" key="LANG38">Heizung</label><input key="LANG38" name="in2" onclick="" type="checkbox" data-name="Heizung" id="heizung1" /><br>
@@ -1377,7 +1377,7 @@
 				<h2 style="color:yellow; border:solid 2px; text-align:center;" class="lang" key="LANG15">Extraausstattung</h2>
 				<label style="color:yellow;" class="lang" key="LANG16">Drehlicht</label><input key="LANG16" name="in3" type="checkbox" onclick="myFunction(this, '3')" data-name="Drehlicht" id="drehlicht3" /><br>
 				<label style="color:yellow;" class="lang" key="LANG34">Werbetafel</label><input key="LANG34" name="in3" onclick="setWerbetafel(this, '2')" type="checkbox" data-name="Werbetafel" id="werbetafel2" /><br>
-				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in3" onclick="setWerbetafel(this, '2')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung2" /><br>
+				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in3" onclick="setWerbetafelLamps(this, '2')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung2" /><br>
 				<label style="color:yellow;" class="lang" key="LANG36">Transparentes Dach</label><input key="LANG36" name="in3" onclick="setDachtransparent(this, '2')" type="checkbox" data-name="Transparentes Dach" id="dach_transparent2" /><br>
 				<label style="color:yellow;" class="lang" key="LANG37">Zwei Türen-System</label><input key="LANG37" name="in3" onclick="" type="checkbox" data-name="Zwei-Türen System" id="zweiTueren2" /><br>
 				<label style="color:yellow;" class="lang" key="LANG38">Heizung</label><input key="LANG38" name="in3" onclick="" type="checkbox" data-name="Heizung" id="heizung2" /><br>
@@ -1661,12 +1661,12 @@
 			<div class="long">
 				<div style="text-align:center;">
 					<h2 style="color:yellow; border:solid 2px;" class="lang" key="LANG33">Aufbau</h2>
-					<button type="button" onclick="setAnhanegerGlass(this, '4', '1')" class="btn btn-primary lang" id="open3" key="LANG82">Offen</button> &nbsp;&nbsp;&nbsp;<button type="button" onclick="setAnhanegerGlass(this, '4', '2')" class="btn btn-success active lang" id="close3" key="LANG83">Geschlossen</button>
+					<button type="button" onclick="setAnhanegerGlass(this, '3', '1')" class="btn btn-primary lang" id="open3" key="LANG82">Offen</button> &nbsp;&nbsp;&nbsp;<button type="button" onclick="setAnhanegerGlass(this, '3', '2')" class="btn btn-success active lang" id="close3" key="LANG83">Geschlossen</button>
 				</div>
 				<h2 style="color:yellow; border:solid 2px; text-align:center;" class="lang" key="LANG15">Extraausstattung</h2>
 				<label style="color:yellow;" class="lang" key="LANG16">Drehlicht</label><input key="LANG16" name="in4" type="checkbox" onclick="myFunction(this, '4')" data-name="Drehlicht" id="drehlicht4" /><br>
 				<label style="color:yellow;" class="lang" key="LANG34">Werbetafel</label><input key="LANG34" name="in4" onclick="setWerbetafel(this, '3')" type="checkbox" data-name="Werbetafel" id="werbetafel3" /><br>
-				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in4" onclick="setWerbetafel(this, '3')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung3" /><br>
+				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in4" onclick="setWerbetafelLamps(this, '3')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung3" /><br>
 				<label style="color:yellow;" class="lang" key="LANG36">Transparentes Dach</label><input key="LANG36" name="in4" onclick="setDachtransparent(this, '3')" type="checkbox" data-name="Transparentes Dach" id="dach_transparent3" /><br>
 				<label style="color:yellow;" class="lang" key="LANG37">Zwei Türen-System</label><input key="LANG37" name="in4" onclick="" type="checkbox" id="zweiTueren3" data-name="Zwei-Türen System" /><br>
 				<label style="color:yellow;" class="lang" key="LANG38">Heizung</label><input key="LANG38" name="in4" onclick="" type="checkbox" id="heizung3" data-name="Heizung" /><br>
@@ -1956,7 +1956,7 @@
 				<h2 style="color:yellow; border:solid 2px; text-align:center;" class="lang" key="LANG15">Extraausstattung</h2>
 				<label style="color:yellow;" class="lang" key="LANG16">Drehlicht</label><input key="LANG16" name="in5" type="checkbox" onclick="myFunction(this, '5')" data-name="Drehlicht" id="drehlicht5" /><br>
 				<label style="color:yellow;" class="lang" key="LANG34">Werbetafel</label><input key="LANG34" name="in5" onclick="setWerbetafel(this, '4')" type="checkbox" data-name="Werbetafel" id="werbetafel4" /><br>
-				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in5" onclick="setWerbetafel(this, '4')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung4" /><br>
+				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in5" onclick="setWerbetafelLamps(this, '4')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung4" /><br>
 				<label style="color:yellow;" class="lang" key="LANG36">Transparentes Dach</label><input key="LANG36" name="in5" onclick="setDachtransparent(this, '4')" type="checkbox" data-name="Transparentes Dach" id="dach_transparent4" /><br>
 				<label style="color:yellow;" class="lang" key="LANG37">Zwei Türen-System</label><input key="LANG37" name="in5" onclick="" type="checkbox" data-name="Zwei-Türen System" id="zweiTueren4" /><br>
 				<label style="color:yellow;" class="lang" key="LANG38">Heizung</label><input key="LANG38" name="in5" onclick="" type="checkbox" id="heizung4" data-name="Heizung" /><br>
@@ -2245,7 +2245,7 @@
 				<h2 style="color:yellow; border:solid 2px; text-align:center;" class="lang" key="LANG15">Extraausstattung</h2>
 				<label style="color:yellow;" class="lang" key="LANG16">Drehlicht</label><input key="LANG16" name="in6" type="checkbox" onclick="myFunction(this, '6')" data-name="Drehlicht" id="drehlicht6" /><br>
 				<label style="color:yellow;" class="lang" key="LANG34">Werbetafel</label><input key="LANG34" name="in6" onclick="setWerbetafel(this, '5')" type="checkbox" data-name="Werbetafel" id="werbetafel5" /><br>
-				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in6" onclick="setWerbetafel(this, '5')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung5" /><br>
+				<label style="color:yellow;" class="lang" key="LANG35">Werbetafel mit Beleuchtung</label><input key="LANG35" name="in6" onclick="setWerbetafelLamps(this, '5')" data-name="Werbetafel mit Beleuchtung" type="checkbox" id="werbetafel_beleuchtung5" /><br>
 				<label style="color:yellow;" class="lang" key="LANG36">Transparentes Dach</label><input key="LANG36" name="in6" onclick="setDachtransparent(this, '5')" type="checkbox" data-name="Transparentes Dach" id="dach_transparent5" /><br>
 				<label style="color:yellow;" class="lang" key="LANG37">Zwei Türen-System</label><input key="LANG37" name="in6" onclick="" type="checkbox" id="zweiTueren5" data-name="Zwei-Türen System" /><br>
 				<label style="color:yellow;" class="lang" key="LANG38">Heizung</label><input key="LANG38" name="in6" onclick="" type="checkbox" id="heizung5" data-name="Heizung" /><br>
@@ -3172,6 +3172,7 @@ $(document).ready(function () {
 			            scene.getObjectByName('Handycap_Rampe_2_anh' + counter + '').visible = false;
 			            scene.getObjectByName('Drehlicht_anh' + counter + '').visible = false;
 			            scene.getObjectByName('Handycap_Rampe_1_anh' + counter + '').visible = false;
+			            scene.getObjectByName('coloredLamps_anh' + counter + '').visible = false;
 			            scene.getObjectByName('Handycap_Schieb_anh' + counter + '').visible = false;
 			            scene.getObjectByName('Sitzbank_Handycab_1_anh' + counter + '').visible = false;
 			            scene.getObjectByName('Text_luxus_anh' + counter + '').visible = false;
@@ -3552,6 +3553,7 @@ $(document).ready(function () {
 			                scene.getObjectByName('Handycap_Rampe_2_anh4').visible = false;
 			                scene.getObjectByName('Drehlicht_anh4').visible = false;
 			                scene.getObjectByName('Handycap_Rampe_1_anh4').visible = false;
+			                scene.getObjectByName('coloredLamps_anh4').visible = false;
 			                scene.getObjectByName('Text_luxus_anh4').visible = false;
 			                scene.getObjectByName('Text_body_anh4').visible = true;
 
@@ -3822,6 +3824,7 @@ $(document).ready(function () {
 			                scene.getObjectByName('Handycap_Rampe_2_anh5').visible = false;
 			                scene.getObjectByName('Drehlicht_anh5').visible = false;
 			                scene.getObjectByName('Handycap_Rampe_1_anh5').visible = false;
+							scene.getObjectByName('coloredLamps_anh5').visible = false;
 			                scene.getObjectByName('Text_luxus_anh5').visible = false;
 			                scene.getObjectByName('Text_body_anh5').visible = true;
 			                $('#nrSeats').html('<img src="examples/sitz56.png" width="65" />');
