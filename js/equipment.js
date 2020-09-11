@@ -124,9 +124,40 @@ function setWerbetafel(elmnt, nr) {
     if (document.getElementById(tmp).checked) {
         scene.getObjectByName('Werbetafel_1_anh' + nr).visible = true;
         scene.getObjectByName('Werbetafel_2_anh' + nr).visible = true;
+		billboards_normal = true;
+		
+		if(billboards_lamps == true){
+			scene.getObjectByName('coloredLamps_anh' + nr).visible = false;
+			billboards_lamps = false;
+			
+			document.getElementById('werbetafel_beleuchtung'+nr).checked = false;
+		}
     } else {
         scene.getObjectByName('Werbetafel_1_anh' + nr).visible = false;
         scene.getObjectByName('Werbetafel_2_anh' + nr).visible = false;
+		billboards_normal = false;
+    }
+
+}
+
+function setWerbetafelLamps(elmnt, nr) {
+    var tmp = elmnt.id;
+    if (document.getElementById(tmp).checked) {
+        scene.getObjectByName('Werbetafel_1_anh' + nr).visible = true;
+        scene.getObjectByName('Werbetafel_2_anh' + nr).visible = true;
+        scene.getObjectByName('coloredLamps_anh' + nr).visible = true;
+		billboards_lamps = true;
+		
+		if(billboards_normal == true){
+			billboards_normal = false;
+			
+			document.getElementById('werbetafel'+nr).checked = false;
+		}
+    } else {
+        scene.getObjectByName('Werbetafel_1_anh' + nr).visible = false;
+        scene.getObjectByName('Werbetafel_2_anh' + nr).visible = false;
+        scene.getObjectByName('coloredLamps_anh' + nr).visible = false;
+		billboards_lamps = false;
     }
 
 }
@@ -1047,6 +1078,7 @@ function setAnhanegerGlass(elmnt, nr, isOpen) {
                     closed5 = true;
                 }
             } else if (isOpen == 1) {
+				
                 scene.getObjectByName('fenster_body_1_anh' + nr).visible = false;
                 scene.getObjectByName('fenster_body_2_anh' + nr).visible = false;
                 scene.getObjectByName('fenster_body_3_anh' + nr).visible = false;
